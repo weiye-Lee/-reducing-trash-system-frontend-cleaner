@@ -1,0 +1,2 @@
+<!--miniprogram/pages/userSetting/userSetting.wxml-->
+<van-button type="danger" size="large" bindtap="logOut">退出账号</van-button>

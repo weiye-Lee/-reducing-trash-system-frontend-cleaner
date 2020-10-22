@@ -1,0 +1,2 @@
+<!--miniprogram/pages/store/store.wxml-->
+<van-button type="primary" size="large" open-type='getUserInfo' bindtap="doLogin">登录</van-button>

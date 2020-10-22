@@ -1,0 +1,39 @@
+<!--miniprogram/pages/farmerHomePage/farmerHomePage.wxml-->
+<view style="margin:8px 8px 0px 8px;">
+	<swiper class='lunbo' indicator-dots='true' autoplay='true' interval='4000' style="height:330rpx;">
+		<swiper-item>
+			<image src='../../images/homePage/homePage1.jpg'></image>
+		</swiper-item>
+		<swiper-item>
+			<image src='../../images/homePage/homePage1.jpg'></image>
+		</swiper-item>
+		<swiper-item>
+			<image src='../../images/homePage/homePage1.jpg'></image>
+		</swiper-item>
+	</swiper>
+</view>
+<view class="cleaner-buttons-container">
+	<view class="my-buttons">
+		<button class="my-button">投递指南</button>
+		<button class="my-button">兑换商城</button>
+		<button class="my-button">排行榜</button>
+	</view>
+		<view class="my-buttons">
+		<button class="my-button" bindtap="gotoFCOrder">农户垃圾回收</button>
+		<button class="my-button">可回收交付</button>
+		<button class="my-button">不可回收交付</button>
+	</view>
+</view>
+<view class="note">
+	欢迎您！{{user.user.name}}
+</view>
+<view class="show-container">
+	<view class="show-container-item">
+		<view class="show-text">我的积分</view>
+		<view class="show-score">0分</view>
+	</view>
+	<view class="show-container-item">
+		<view class="show-text">累计参与</view>
+		<view class="show-score">0次</view>
+	</view>
+</view>

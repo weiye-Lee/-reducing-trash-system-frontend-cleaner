@@ -1,0 +1,52 @@
+/* miniprogram/pages/farmerHomePage/farmerHomePage.wxss */
+.big-container{
+  background-color: 	#DCDCDC;
+  height: 100%;
+}
+/* 轮播图 */
+.lunbo{
+  /* margin:10rpx; */
+  width: 100%;
+}
+.lunbo image{
+  /* padding:10rpx; */
+  width: 100%;
+  max-height :100%;
+  border-radius: 20rpx;
+}
+.cleaner-buttons-container{
+  padding: 30rpx 18rpx 20rpx 18rpx;
+}
+.my-buttons{
+  display: flex;
+}
+.my-button{
+  font-size: 30rpx;
+  border-radius: 20rpx;
+  background-color:#1296db;
+  color: white;
+  box-shadow:1px 1px 1px 1px #D3D3D3;
+  width:250rpx ;
+  margin: 10rpx 5rpx;
+  padding: 0rpx;
+}
+.note{
+  padding: 25rpx 40rpx 0rpx 40rpx;
+}
+.show-container{
+  display: flex;
+  padding: 40rpx;
+  margin: 25rpx;
+  background-color: white;
+  border-radius: 20rpx;
+  box-shadow:1px 1px 1px 1px #D3D3D3;
+}
+.show-container-item{
+ width: 50%;
+}
+.show-score{
+  text-align: center;
+  font-size: 50rpx;
+  padding-top: 10rpx;
+}
+
