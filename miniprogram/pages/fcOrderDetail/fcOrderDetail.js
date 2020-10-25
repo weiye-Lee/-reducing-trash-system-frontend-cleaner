@@ -230,6 +230,10 @@ Page({
     })
   },
   confirmOrder() {
+    wx.showLoading({
+      title: '加载中...',
+      mask: true
+    });
     var t = app.globalData.fcOrder.garbageChooses;
     var num = t.length;
     var list = new Array();
@@ -262,6 +266,7 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
+        wx.hideLoading();
         app.globalData.updateFlag=0;
         console.log(res.data);
         setTimeout(function(){

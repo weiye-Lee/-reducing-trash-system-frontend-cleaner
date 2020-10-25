@@ -35,6 +35,10 @@ Page({
         duration: 1000,
       })
     } else {
+      wx.showLoading({
+        title: '加载中...',
+        mask: true
+      });
       var t = this.data.garbageChooses;
       console.log(this.data.garbageChooses);
       var newGarbageChooses = new Array();
@@ -68,7 +72,8 @@ Page({
        'content-type': 'application/json' // 默认值
      },
      success(res){
-       console.log(res.data)
+       wx.hideLoading();
+       console.log(res.data);
        app.globalData.score=0.0;
        app.globalData.cdGarbageChooses=[];
        wx.showToast({
