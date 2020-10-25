@@ -38,11 +38,13 @@ Page({
       },
       success(res){
         console.log(res.data)
-        wx.setStorageSync('user',res.data);
-        //正式开发环境从此开始：
-        that.setData({
-          user: wx.getStorageSync('user')
-        })
+        if(res.data.code==200){
+          wx.setStorageSync('user',res.data);
+          //正式开发环境从此开始：
+          that.setData({
+            user: wx.getStorageSync('user')
+          })
+        }
       },
       fail(){
         console.log("fail");

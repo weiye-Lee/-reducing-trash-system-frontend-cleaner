@@ -7,66 +7,68 @@ Page({
    */
   data: {
     user: null,
-    garbageChooses:[],
+    garbageChooses: [],
   },
   gotoFarmerAppoint: function () {
     wx.navigateTo({
       url: '../farmerAppointment/farmerAppointment',
     })
   },
-  gotoFCOrder(){
+  gotoFCOrder() {
     wx.navigateTo({
       url: '../fcOrder/fcOrder',
     })
   },
-  gotoCDAppointment(){
+  gotoCDAppointment() {
     var that = this;
     var link2 = 'http://localhost:8080/api/user/getUnRecycleGarbage';
     var Token = wx.getStorageSync('token');
-     //请求不可回垃圾
-     wx.request({
+    //请求不可回垃圾
+    wx.request({
       url: link2,
       header: {
         'Authorization': Token,
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        //正式开发环境从此开始：
-        app.globalData.unRecycleGarbage = res.data.data.unRecycleGarbage
-        // that.setData({
-        //   recycleGarbage: res.data.data.recycleGarbage
-        // })
-        var t = res.data.data.unRecycleGarbage;
-        console.log(t);
-        var a = t.metal.length;
-        var b = t.pesticide.length;
-        //制造订单数组
-        for (var i = 0; i < a; i++) {
-          var id = t.metal[i].id;
-          if (that.data.garbageChooses[id] == null) {
-            var index = "garbageChooses[" + id + "].garbage";
-            var index2 = "garbageChooses[" + id + "].amount";
-            var index3 = "garbageChooses[" + id + "].id";
-            that.setData({
-              [index]: t.metal[i],
-              [index2]: 0,
-            })
+        if (res.data.code == 200) {
+          //正式开发环境从此开始：
+          app.globalData.unRecycleGarbage = res.data.data.unRecycleGarbage
+          // that.setData({
+          //   recycleGarbage: res.data.data.recycleGarbage
+          // })
+          var t = res.data.data.unRecycleGarbage;
+          console.log(t);
+          var a = t.metal.length;
+          var b = t.pesticide.length;
+          //制造订单数组
+          for (var i = 0; i < a; i++) {
+            var id = t.metal[i].id;
+            if (that.data.garbageChooses[id] == null) {
+              var index = "garbageChooses[" + id + "].garbage";
+              var index2 = "garbageChooses[" + id + "].amount";
+              var index3 = "garbageChooses[" + id + "].id";
+              that.setData({
+                [index]: t.metal[i],
+                [index2]: 0,
+              })
+            }
           }
-        }
-        for (var i = 0; i < b; i++) {
-          var id = t.pesticide[i].id;
-          if (that.data.garbageChooses[id] == null) {
-            var index = "garbageChooses[" + id + "].garbage";
-            var index2 = "garbageChooses[" + id + "].amount";
-            var index3 = "garbageChooses[" + id + "].id";
-            that.setData({
-              [index]: t.pesticide[i],
-              [index2]: 0,
-            })
+          for (var i = 0; i < b; i++) {
+            var id = t.pesticide[i].id;
+            if (that.data.garbageChooses[id] == null) {
+              var index = "garbageChooses[" + id + "].garbage";
+              var index2 = "garbageChooses[" + id + "].amount";
+              var index3 = "garbageChooses[" + id + "].id";
+              that.setData({
+                [index]: t.pesticide[i],
+                [index2]: 0,
+              })
+            }
           }
+          console.log(that.data.garbageChooses);
+          app.globalData.cdGarbageChooses = that.data.garbageChooses;
         }
-        console.log(that.data.garbageChooses);
-        app.globalData.cdGarbageChooses = that.data.garbageChooses;
       },
       fail() {
         console.log("fail");
@@ -82,9 +84,9 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-        that.setData({
-          user: wx.getStorageSync('user')
-        })
+    that.setData({
+      user: wx.getStorageSync('user')
+    })
   },
 
 

@@ -52,9 +52,12 @@ swichNav: function (e) {
         },
         success(res) {
           console.log(res.data);
+          if(res.data.code==200){
           that.setData({
             unFinishedList:res.data.data
           })
+          }
+         
         }
       });
       wx.request({
@@ -65,9 +68,12 @@ swichNav: function (e) {
         },
         success(res) {
           console.log(res.data);
+          if(res.data.code==200){
           that.setData({
             finishedList:res.data.data
           })
+          }
+         
         }
       });
   },

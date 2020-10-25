@@ -34,7 +34,8 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        //正式开发环境从此开始：
+        if(res.data.code==200){
+          //正式开发环境从此开始：
         app.globalData.recycleGarbage = res.data.data.recycleGarbage
         // that.setData({
         //   recycleGarbage: res.data.data.recycleGarbage
@@ -111,6 +112,8 @@ Page({
         }
         app.globalData.fcOrder.garbageChooses = that.data.garbageChooses;
         console.log(that.data.garbageChooses);
+        }
+        
       },
       fail() {
         console.log("fail");
@@ -124,7 +127,8 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        //正式开发环境从此开始：
+        if(res.data.code==200){
+           //正式开发环境从此开始：
         app.globalData.unRecycleGarbage = res.data.data.unRecycleGarbage
         // that.setData({
         //   recycleGarbage: res.data.data.recycleGarbage
@@ -161,6 +165,7 @@ Page({
         }
         console.log(that.data.garbageChooses);
         app.globalData.fcOrder.garbageChooses = that.data.garbageChooses;
+        }
       },
       fail() {
         console.log("fail");
@@ -174,7 +179,8 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        app.globalData.soil = res.data.data.soil
+        if(res.data.code==200){
+          app.globalData.soil = res.data.data.soil
         var t = res.data.data.soil;
         console.log(t);
         var a = t.soil.length;
@@ -193,6 +199,7 @@ Page({
         }
         app.globalData.fcOrder.garbageChooses = that.data.garbageChooses;
         console.log(that.data.garbageChooses);
+        }
       },
       fail() {
         console.log("fail");
@@ -267,15 +274,17 @@ Page({
       },
       success(res) {
         wx.hideLoading();
-        app.globalData.updateFlag=0;
-        console.log(res.data);
-        setTimeout(function(){
-          wx.showToast({
-          title: '确认成功',
-          icon:'success',
-          duration:1000,
-        })
-        },1500);
+        if(res.data.code==200){
+          app.globalData.updateFlag=0;
+          console.log(res.data);
+          setTimeout(function(){
+            wx.showToast({
+            title: '确认成功',
+            icon:'success',
+            duration:1000,
+          })
+          },1500);
+        }
         
       }
     })
@@ -298,7 +307,8 @@ Page({
         },
         success(res) {
           console.log(res.data);
-          that.setData({
+          if(res.data.code==200){
+            that.setData({
             order: res.data.data
           })
           app.globalData.order = res.data.data;
@@ -318,6 +328,8 @@ Page({
           }
           console.log(that.data.garbageChooses);
           app.globalData.fcOrder.garbageChooses = that.data.garbageChooses;
+          }
+          
         }
       })
     } else {

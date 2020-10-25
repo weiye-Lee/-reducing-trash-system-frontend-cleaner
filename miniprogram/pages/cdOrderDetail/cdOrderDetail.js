@@ -24,9 +24,12 @@ Page({
       },
       success(res){
         console.log(res.data);
-        that.setData({
+        if(res.data.code==200){
+          that.setData({
           order:res.data.data
         })
+        }
+       
       }
     })
   },

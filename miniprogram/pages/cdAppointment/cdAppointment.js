@@ -74,7 +74,8 @@ Page({
      success(res){
        wx.hideLoading();
        console.log(res.data);
-       app.globalData.score=0.0;
+       if(res.data.code==200){
+         app.globalData.score=0.0;
        app.globalData.cdGarbageChooses=[];
        wx.showToast({
          title: '提交成功',
@@ -86,6 +87,8 @@ Page({
           url: '../homePage/homePage',
         })
        },1500)
+       }
+       
      }
     })
     }
