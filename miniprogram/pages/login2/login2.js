@@ -1,5 +1,5 @@
 // miniprogram/pages/login2/login2.js
-var app =getApp()
+var app = getApp()
 Page({
 
   /**
@@ -36,26 +36,29 @@ Page({
       success(res) {
         if (res.data.code == 200) {
           wx.setStorageSync('token', res.header.Authorization)
-          wx.setStorageSync('user',res.data.data.user)
+          wx.setStorageSync('user', res.data.data.user)
           console.log(res.header.Authorization);
-          app.globalData.token=res.header.Authorization
-          app.globalData.user =res.data.data.user
+          app.globalData.token = res.header.Authorization
+          app.globalData.user = res.data.data.user
           console.log(res.data.data.user);
           wx.showToast({
-              title: '登录成功',
-              icon: "success",
-              duration: 2000,
+            title: '登录成功',
+            icon: "success",
+            duration: 2000,
           })
-          wx.switchTab({
-              url: '../homePage/homePage',        
-              });
+          setTimeout(function () {
+            wx.switchTab({
+              url: '../homePage/homePage',
+            });
+          }, 1000)
+
         } else {
           // 验证码错误
           wx.showToast({
             title: '用户名或密码错误',
-            icon:"none",
+            icon: "none",
             duration: 2000,
-        })
+          })
         }
       }
     })

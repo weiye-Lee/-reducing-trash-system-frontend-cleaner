@@ -264,11 +264,14 @@ Page({
       success(res) {
         app.globalData.updateFlag=0;
         console.log(res.data);
-        wx.showToast({
+        setTimeout(function(){
+          wx.showToast({
           title: '确认成功',
           icon:'success',
           duration:1000,
         })
+        },1500);
+        
       }
     })
   },

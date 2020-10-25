@@ -76,9 +76,11 @@ Page({
          icon: 'success',
          duration: 2000,
        })
-       wx.switchTab({
-         url: '../homePage/homePage',
-       })
+       setTimeout(function(){
+        wx.switchTab({
+          url: '../homePage/homePage',
+        })
+       },1500)
      }
     })
     }
