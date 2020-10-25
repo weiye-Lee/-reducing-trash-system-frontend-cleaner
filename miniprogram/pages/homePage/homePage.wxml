@@ -19,9 +19,8 @@
 		<button class="my-button">排行榜</button>
 	</view>
 		<view class="my-buttons">
-		<button class="my-button" bindtap="gotoFCOrder">农户垃圾回收</button>
-		<button class="my-button">可回收交付</button>
-		<button class="my-button">不可回收交付</button>
+		<button class="my-button-2" bindtap="gotoFCOrder">审核农户订单</button>
+		<button class="my-button-2" bindtap="gotoCDAppointment">交付不可回收垃圾</button>
 	</view>
 </view>
 <view class="note">

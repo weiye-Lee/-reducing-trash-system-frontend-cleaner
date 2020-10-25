@@ -5,7 +5,7 @@
             <van-sidebar-item title="就地处理垃圾" id="0" bindtap='switchNav' />
         </van-sidebar>
     </view>
-    <view class="right">
+     <view class="right">
         <view class='type'>
             <!-- current:当前所在滑块的 index -->
             <!-- vertical:滑动方向是否为纵向 -->
@@ -15,6 +15,7 @@
                     <block wx:for="{{soil.soil}}" wx:key="index">
                         <view data-garbageId="{{item.id}}" class="garbage-item">
                             <view class="garbage-pic">
+                            	<image src="{{item.picture}}"></image>
                             </view>
                             <view class="garbage-note">
                                 <view class="title">
@@ -25,7 +26,7 @@
                                     <view class="count">{{garbageChooses[item.id].amount}}{{item.unit}}</view>
                                 </view>
                                 <view class="footer" wx:if="{{item.unit=='斤'}}">
-                                    <input data-id="{{item.id}}" data-name="amount" value="{{garbageChooses[item.id].amount}}" class="num-input" bindblur="onUnitChange"></input>斤
+                                    <input data-id="{{item.id}}" data-name="amount" value="{{garbageChooses[item.id].amount}}" class="num-input" bindblur="onUnitChangeByFloat"></input>斤
                                     <button data-id="{{item.id}}" bindtap='addAmount' plain="true">
                                         <image class="icon" src="../../images/util/add.png"></image>
                                     </button>
@@ -42,7 +43,7 @@
                                     </button> -->
                                 </view>
                                 <view class="footer" wx:if="{{item.unit=='个'}}">
-                                    <input data-id="{{item.id}}" data-name="amount" value="{{garbageChooses[item.id].amount}}" class="num-input" bindinput="onUnitChange"></input>个
+                                    <input data-id="{{item.id}}" data-name="amount" value="{{garbageChooses[item.id].amount}}" class="num-input" bindinput="onUnitChangeByInt"></input>个
                                     <button data-id="{{item.id}}" bindtap='addAmount' plain="true">
                                         <image class="icon" src="../../images/util/add.png"></image>
                                     </button>
@@ -51,7 +52,7 @@
                                     </button>
                                 </view>
                                 <view class="footer" wx:if="{{item.unit=='节'}}">
-                                    <input data-id="{{item.id}}" data-name="amount" value="{{garbageChooses[item.id].amount}}" class="num-input" bindinput="onUnitChange"></input>个
+                                    <input data-id="{{item.id}}" data-name="amount" value="{{garbageChooses[item.id].amount}}" class="num-input" bindinput="onUnitChangeByInt"></input>个
                                     <button data-id="{{item.id}}" bindtap='addAmount' plain="true">
                                         <image class="icon" src="../../images/util/add.png"></image>
                                     </button>

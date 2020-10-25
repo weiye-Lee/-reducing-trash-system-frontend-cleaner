@@ -33,7 +33,7 @@
 						</view>
 					</block>
 				</view>
-				<view class="garbage-right" bindtap="gotoRecycle">
+				<view class="garbage-right" bindtap="gotoRecycle" wx:if="{{!order.checkStatus}}">
 					<image src="../../images/util/edit2.png"></image>
 				</view>
 			</view>
@@ -50,7 +50,7 @@
 						</view>
 					</block>
 				</view>
-				<view class="garbage-right" bindtap="gotoUnRecycle">
+				<view class="garbage-right" bindtap="gotoUnRecycle" wx:if="{{!order.checkStatus}}">
 					<image src="../../images/util/edit2.png"></image>
 				</view>
 			</view>
@@ -67,7 +67,7 @@
 						</view>
 					</block>
 				</view>
-				<view class="garbage-right" bindtap="gotoSoil">
+				<view class="garbage-right" bindtap="gotoSoil" wx:if="{{!order.checkStatus}}">
 					<image src="../../images/util/edit2.png"></image>
 				</view>
 			</view>
@@ -90,7 +90,7 @@
 		</view>
 	</view>
 </view>
-<view class="bottom-button">
+<view class="bottom-button" wx:if="{{!order.checkStatus}}">
 	<van-button type="danger" size="large">取消订单</van-button>
 	<van-button color="rgb(18,150,219)" size="large" bindtap="confirmOrder">确认订单</van-button>
 </view>

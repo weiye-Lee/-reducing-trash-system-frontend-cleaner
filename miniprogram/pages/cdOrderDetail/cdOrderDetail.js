@@ -1,26 +1,34 @@
-// miniprogram/pages/userSetting/userSetting.js
-var app = getApp()
+// miniprogram/pages/cdOrderDetail/cdOrderDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    order:'',
+  },
 
-  },
-  logOut() {
-    app.globalData.token = '';
-    wx.setStorageSync('token', '');
-    wx.setStorageSync('user', null);
-    wx.navigateTo({
-      url: '../login2/login2',
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    var id = options.id;
+    var link = 'http://localhost:8080/api/cleaner/getBaseOrderById?id='+id;
+    var Token = wx.getStorageSync('token');
+    wx.request({
+      url: link,
+      header: {
+        'Authorization':Token,
+        'content-type': 'application/json' // 默认值
+      },
+      success(res){
+        console.log(res.data);
+        that.setData({
+          order:res.data.data
+        })
+      }
+    })
   },
 
   /**

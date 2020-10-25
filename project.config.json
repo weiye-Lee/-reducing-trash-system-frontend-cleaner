@@ -49,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
@@ -75,20 +75,6 @@
 					"id": -1,
 					"name": "pages/my/my",
 					"pathName": "pages/my/my",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 4,
-					"name": "pages/login2/login2",
-					"pathName": "pages /login2/login2",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/login2/login2",
-					"pathName": "pages/login2/login2",
 					"query": "",
 					"scene": null
 				},
@@ -131,6 +117,48 @@
 					"id": -1,
 					"name": "pages/soil/soil",
 					"pathName": "pages/soil/soil",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/cdAppointment/cdAppointment",
+					"pathName": "pages/cdAppointment/cdAppointment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/cdAddressManage/cdAddressManage",
+					"pathName": "pages/cdAddressManage/cdAddressManage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/cdUnRecycle/cdUnRecycle",
+					"pathName": "pages/cdUnRecycle/cdUnRecycle",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login2/login2",
+					"pathName": "pages/login2/login2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/cdOrder/cdOrder",
+					"pathName": "pages/cdOrder/cdOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 15,
+					"name": "pages/cdOrderDetail/cdOrderDetail",
+					"pathName": "pages/cdOrderDetail/cdOrderDetail",
 					"query": "id=1",
 					"scene": null
 				}

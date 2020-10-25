@@ -16,13 +16,24 @@ App({
   globalData: {
     userInfo: null,
     token: "",
-    user:'',
+    user:{
+      name:'',
+      phoneNumber:'',
+      address:'',
+    },
     remark: '',
     recycleGarbage:[],
     unRecycleGarbage:[],
     soil:[],
     garbageChooses:[],
-    fcOrder:'',
+    fcOrder:{
+      name:'',
+      tele:'',
+      address:'',
+      remark:'',
+      garbageChooses:[],
+    },
     updateFlag:0,//控制订单审核界面订单的初始化，值为0时订单对象从后端取，值为1时订单对象从前端全局变量取
+    cdGarbageChooses:[],
   }
 })

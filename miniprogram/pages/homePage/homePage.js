@@ -19,34 +19,72 @@ Page({
       url: '../fcOrder/fcOrder',
     })
   },
+  gotoCDAppointment(){
+    var that = this;
+    var link2 = 'http://localhost:8080/api/user/getUnRecycleGarbage';
+    var Token = wx.getStorageSync('token');
+     //请求不可回垃圾
+     wx.request({
+      url: link2,
+      header: {
+        'Authorization': Token,
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        //正式开发环境从此开始：
+        app.globalData.unRecycleGarbage = res.data.data.unRecycleGarbage
+        // that.setData({
+        //   recycleGarbage: res.data.data.recycleGarbage
+        // })
+        var t = res.data.data.unRecycleGarbage;
+        console.log(t);
+        var a = t.metal.length;
+        var b = t.pesticide.length;
+        //制造订单数组
+        for (var i = 0; i < a; i++) {
+          var id = t.metal[i].id;
+          if (that.data.garbageChooses[id] == null) {
+            var index = "garbageChooses[" + id + "].garbage";
+            var index2 = "garbageChooses[" + id + "].amount";
+            var index3 = "garbageChooses[" + id + "].id";
+            that.setData({
+              [index]: t.metal[i],
+              [index2]: 0,
+            })
+          }
+        }
+        for (var i = 0; i < b; i++) {
+          var id = t.pesticide[i].id;
+          if (that.data.garbageChooses[id] == null) {
+            var index = "garbageChooses[" + id + "].garbage";
+            var index2 = "garbageChooses[" + id + "].amount";
+            var index3 = "garbageChooses[" + id + "].id";
+            that.setData({
+              [index]: t.pesticide[i],
+              [index2]: 0,
+            })
+          }
+        }
+        console.log(that.data.garbageChooses);
+        app.globalData.cdGarbageChooses = that.data.garbageChooses;
+      },
+      fail() {
+        console.log("fail");
+      }
+    })
+    wx.navigateTo({
+      url: '../cdAppointment/cdAppointment',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this;
-    var link = 'http://localhost:8080/api/user/index';
-    var Token = wx.getStorageSync('token');
-    // console.log("1:"+Token)
-    //JSON.parse() 方法用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。
-    wx.request({
-      url: link,
-      header: {
-        'Authorization': Token,
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        // console.log(res.data)
-        wx.setStorageSync('user', res.data);
-        //正式开发环境从此开始：
         that.setData({
           user: wx.getStorageSync('user')
         })
-      },
-      fail() {
-        console.log("fail");
-      }
-    })
   },
 
 

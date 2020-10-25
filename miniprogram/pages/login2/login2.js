@@ -37,8 +37,10 @@ Page({
         if (res.data.code == 200) {
           wx.setStorageSync('token', res.header.Authorization)
           wx.setStorageSync('user',res.data.data.user)
+          console.log(res.header.Authorization);
           app.globalData.token=res.header.Authorization
           app.globalData.user =res.data.data.user
+          console.log(res.data.data.user);
           wx.showToast({
               title: '登录成功',
               icon: "success",

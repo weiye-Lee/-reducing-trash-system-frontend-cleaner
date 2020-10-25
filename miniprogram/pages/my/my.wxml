@@ -22,9 +22,9 @@
 	</view>
 </view>
 <view class="button-container">
-<button class="button-border"><image src="../../images/my/order.png"></image>农户订单<van-icon  class="arrow-icon" name="arrow" /></button>
+<button class="button-border" bindtap="gotoFCOrder"><image src="../../images/my/order.png"></image>农户订单<van-icon  class="arrow-icon" name="arrow" /></button>
 <button class="button-border"><image src="../../images/my/order.png"></image>可回收垃圾订单<van-icon  class="arrow-icon" name="arrow" /></button>
-<button class="button-border"><image src="../../images/my/order.png"></image>不可回收垃圾订单<van-icon  class="arrow-icon" name="arrow" /></button>
+<button class="button-border" bindtap="gotoCDOrder"><image src="../../images/my/order.png"></image>不可回收垃圾订单<van-icon  class="arrow-icon" name="arrow" /></button>
 
 <button class="button-border"><image src="../../images/my/order.png"></image>我的兑换<van-icon  class="arrow-icon" name="arrow" /></button>
 

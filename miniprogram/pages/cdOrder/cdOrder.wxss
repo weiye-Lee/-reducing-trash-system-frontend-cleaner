@@ -1,0 +1,57 @@
+
+.container{
+  width: 100%;
+}
+/* 导航栏样式 */
+.swiper-tab {
+  background-color: #fff;
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 50%;
+  color: #797979;
+}
+
+.on {
+  color: rgb(18,150,219);
+  border-bottom: 5rpx solid rgb(18,150,219);
+}
+
+.swiper-box {
+  display: block;
+  width: 100%;
+  height: 1000rpx;
+  overflow: hidden;
+}
+/* 导航栏样式 */
+.item{
+  border-radius: 30rpx;
+  width: 95%;
+  min-height: 160rpx;
+  background-color: white;
+  text-align: center;
+  box-shadow:1px 1px 1px 1px #D3D3D3;
+  margin: 20rpx;
+  padding: 40rpx 0rpx;
+}
+.first-row{
+  display: flex;
+}
+.first-row-left{
+  width: 70%;
+  color: rgb(18,150,219);
+  font-weight:bold
+}
+.first-row-right{
+  width: 30%;
+}
+.second-row{
+  margin-top: 30rpx;
+  position:absolute;
+  left:13%;
+}
