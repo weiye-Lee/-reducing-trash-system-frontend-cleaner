@@ -1,6 +1,31 @@
 //app.js
 App({
   onLaunch: function () {
+    if (!wx.cloud) {
+      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
+    } else {
+      wx.cloud.init({
+        // env 参数说明：
+        //   env 参数决定接下来小程序发起的云开发调用（wx.cloud.xxx）会默认请求到哪个云环境的资源
+        //   此处请填入环境 ID, 环境 ID 可打开云控制台查看
+        //   如不填则使用默认环境（第一个创建的环境）
+        // env: 'my-env-id',
+        traceUser: true,
+      })
+    }
+    const db = wx.cloud.database();
+    var that  = this;
+    db.collection('http').where({
+      _id:"eb0c51035fe03a0c004dc21814d188a5"
+    })
+    .get({
+      success: function(res) {
+        // res.data 是包含以上定义的两条记录的数组
+        console.log(res.data[0].ip)
+        that.globalData.http=res.data[0].ip
+        console.log(that.globalData.http)
+      }
+    })
     // 通过获取token有无判断登录状态
     wx.getStorage({
       key: 'token',
@@ -14,6 +39,7 @@ App({
     })
   },
   globalData: {
+    list: [], // tabBar
     http: 'http://localhost:8080',
     userInfo: null,
     token: "",
