@@ -9,7 +9,11 @@ Page({
     remark: '',
     name: '',
     tele: '',
+    area: '',
+    village: '',
+    street: '',
     address: '',
+    areaInfo: '',
     garbageChooses: [],
   },
   gotoCDAddressManage() {
@@ -57,10 +61,15 @@ Page({
         name: this.data.name,
         phoneNumber: this.data.tele,
         address: this.data.address,
+        province: '黑龙江省',
+        city: '哈尔滨市',
+        area: this.data.area,
+        street: this.data.street,
+        village: this.data.village,
         remark: this.data.remark,
         garbageChooses: newGarbageChooses,
       }
-      var link = 'http://localhost:8080/api/cleaner/addCDOrder';
+      var link = app.globalData.http +'/api/cleaner/addCDOrder';
       var Token = wx.getStorageSync('token');
      var StringBaseOrder = JSON.stringify(myBaseOrder);
      wx.request({
@@ -98,10 +107,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if(app.globalData.user.id){
+      var u = app.globalData.user
+    }else{
+      var u = app.getUser();
+      app.globalData.user = u;
+    }
+    console.log(app.globalData.cdGarbageChooses);
     this.setData({
-      name: app.globalData.user.name,
-      tele: app.globalData.user.phoneNumber,
-      address: app.globalData.user.address,
+      name: u.name,
+      tele: u.phoneNumber,
+      address: u.address,
+      area:u.area,
+      street: u.street,
+      village:u.village,
+      areaInfo: "黑龙江省 哈尔滨市"+u.area + " " + u.street + " " + u.village,
       garbageChooses: app.globalData.cdGarbageChooses,
       remark: app.globalData.remark,
     })

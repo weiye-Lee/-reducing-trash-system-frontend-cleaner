@@ -1,0 +1,31 @@
+/* miniprogram/pages/farmerOrder/farmerOrder.wxss */
+.container{
+  width: 100%;
+}
+
+.item{
+  border-radius: 30rpx;
+  width: 95%;
+  min-height: 160rpx;
+  background-color: white;
+  text-align: center;
+  box-shadow:1px 1px 1px 1px #D3D3D3;
+  margin: 20rpx;
+  padding: 40rpx 0rpx;
+}
+.first-row{
+  display: flex;
+}
+.first-row-left{
+  width: 70%;
+  color: rgb(18,150,219);
+  font-weight:bold
+}
+.first-row-right{
+  width: 30%;
+}
+.second-row{
+  margin-top: 30rpx;
+  position:absolute;
+  left:13%;
+}

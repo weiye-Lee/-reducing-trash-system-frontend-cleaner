@@ -1,168 +1,200 @@
 {
-	"miniprogramRoot": "miniprogram/",
-	"cloudfunctionRoot": "cloudfunctions/",
-	"setting": {
-		"urlCheck": false,
-		"es6": true,
-		"enhance": true,
-		"postcss": true,
-		"preloadBackgroundData": false,
-		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-		"nodeModules": true,
-		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		}
-	},
-	"appid": "wx9c0c1302430160b7",
-	"projectname": "miniprogram-cleaner",
-	"libVersion": "2.8.1",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": -1,
-			"list": [
-				{
-					"id": -1,
-					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "pages/login/login",
-					"pathName": "pages/login/login",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/homePage/homePage",
-					"pathName": "pages/homePage/homePage",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/my/my",
-					"pathName": "pages/my/my",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 6,
-					"name": "pages/fcOrder/fcOrder",
-					"pathName": "pages/fcOrder/fcOrder",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/fcOrderDetail/fcOrderDetail",
-					"pathName": "pages/fcOrderDetail/fcOrderDetail",
-					"query": "id=1",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/updateGarbages/updateGarbages",
-					"pathName": "pages/updateGarbages/updateGarbages",
-					"query": "id=1",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/recycle/recycle",
-					"pathName": "pages/recycle/recycle",
-					"query": "id=1",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/unRecycle/unRecycle",
-					"pathName": "pages/unRecycle/unRecycle",
-					"query": "id=1",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/soil/soil",
-					"pathName": "pages/soil/soil",
-					"query": "id=1",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/cdAppointment/cdAppointment",
-					"pathName": "pages/cdAppointment/cdAppointment",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/cdAddressManage/cdAddressManage",
-					"pathName": "pages/cdAddressManage/cdAddressManage",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/cdUnRecycle/cdUnRecycle",
-					"pathName": "pages/cdUnRecycle/cdUnRecycle",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/login2/login2",
-					"pathName": "pages/login2/login2",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/cdOrder/cdOrder",
-					"pathName": "pages/cdOrder/cdOrder",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 15,
-					"name": "pages/cdOrderDetail/cdOrderDetail",
-					"pathName": "pages/cdOrderDetail/cdOrderDetail",
-					"query": "id=1",
-					"scene": null
-				}
-			]
-		}
-	}
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "bundle": false
+  },
+  "appid": "wx9c0c1302430160b7",
+  "projectname": "miniprogram-cleaner",
+  "libVersion": "2.8.1",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/homePage/homePage",
+          "pathName": "pages/homePage/homePage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/my/my",
+          "pathName": "pages/my/my",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 6,
+          "name": "pages/fcOrder/fcOrder",
+          "pathName": "pages/fcOrder/fcOrder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/fcOrderDetail/fcOrderDetail",
+          "pathName": "pages/fcOrderDetail/fcOrderDetail",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/updateGarbages/updateGarbages",
+          "pathName": "pages/updateGarbages/updateGarbages",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/recycle/recycle",
+          "pathName": "pages/recycle/recycle",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/unRecycle/unRecycle",
+          "pathName": "pages/unRecycle/unRecycle",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/soil/soil",
+          "pathName": "pages/soil/soil",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/cdAppointment/cdAppointment",
+          "pathName": "pages/cdAppointment/cdAppointment",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/cdAddressManage/cdAddressManage",
+          "pathName": "pages/cdAddressManage/cdAddressManage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/cdUnRecycle/cdUnRecycle",
+          "pathName": "pages/cdUnRecycle/cdUnRecycle",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/login2/login2",
+          "pathName": "pages/login2/login2",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/cdOrder/cdOrder",
+          "pathName": "pages/cdOrder/cdOrder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 15,
+          "name": "pages/cdOrderDetail/cdOrderDetail",
+          "pathName": "pages/cdOrderDetail/cdOrderDetail",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/fcManage/fcManage",
+          "pathName": "pages/fcManage/fcManage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/addFarmer/addFarmer",
+          "pathName": "pages/addFarmer/addFarmer",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/rank/rank",
+          "pathName": "pages/rank/rank",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/farmerDetail/farmerDetail",
+          "pathName": "pages/farmerDetail/farmerDetail",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

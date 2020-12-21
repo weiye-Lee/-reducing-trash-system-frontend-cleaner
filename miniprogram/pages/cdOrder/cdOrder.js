@@ -41,15 +41,20 @@ swichNav: function (e) {
    */
   onLoad: function (options) {
     var that = this;
-    var link1 = 'http://localhost:8080/api/cleaner/getCDOrder/Checking';
-    var link2 = 'http://localhost:8080/api/cleaner/getCDOrder/Checked';
+    var link1 = app.globalData.http +'/api/cleaner/getCDOrder/Checking';
+    var link2 = app.globalData.http +'/api/cleaner/getCDOrder/Checked';
     var Token = wx.getStorageSync('token');
+    var data = {
+      col: "none"
+    }
     wx.request({
       url: link1,
       header: {
         'Authorization': Token,
         'content-type': 'application/json' // 默认值
       },
+      method: 'POST',
+      data: data,
       success(res) {
         console.log(res.data);
         if(res.data.code==200){
@@ -65,6 +70,8 @@ swichNav: function (e) {
         'Authorization': Token,
         'content-type': 'application/json' // 默认值
       },
+      method: 'POST',
+      data: data,
       success(res) {
         console.log(res.data);
         if(res.data.code==200){

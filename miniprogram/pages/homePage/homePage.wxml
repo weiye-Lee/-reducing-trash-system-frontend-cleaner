@@ -15,8 +15,8 @@
 <view class="cleaner-buttons-container">
 	<view class="my-buttons">
 		<button class="my-button">投递指南</button>
-		<button class="my-button">兑换商城</button>
-		<button class="my-button">排行榜</button>
+		<button class="my-button" bindtap="gotoStore">兑换商城</button>
+		<button class="my-button" bindtap="gotoRank">排行榜</button>
 	</view>
 		<view class="my-buttons">
 		<button class="my-button-2" bindtap="gotoFCOrder">审核农户订单</button>
@@ -24,15 +24,15 @@
 	</view>
 </view>
 <view class="note">
-	欢迎您！{{user.user.name}}
+	欢迎您！{{user.name}}
 </view>
 <view class="show-container">
 	<view class="show-container-item">
 		<view class="show-text">我的积分</view>
-		<view class="show-score">0分</view>
+		<view class="show-score">{{score}}分</view>
 	</view>
 	<view class="show-container-item">
 		<view class="show-text">累计参与</view>
-		<view class="show-score">0次</view>
+		<view class="show-score">{{times}}次</view>
 	</view>
 </view>

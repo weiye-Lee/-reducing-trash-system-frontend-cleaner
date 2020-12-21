@@ -28,6 +28,12 @@
   height: 1000rpx;
   overflow: hidden;
 }
+.swiper-items{
+  height: 100%;
+}
+.scroll-views{
+  height: 100%;
+}
 /* 导航栏样式 */
 .item{
   border-radius: 30rpx;

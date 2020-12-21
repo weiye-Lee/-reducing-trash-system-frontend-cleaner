@@ -5,7 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    user:null
+    user:null,
+    score:0,
+    times:0,
+  },
+  gotoCROrder(){
+    wx.navigateTo({
+      url: '../crOrder/crOrder',
+    })
   },
   gotoUserSetting(){
       wx.navigateTo({
@@ -22,31 +29,37 @@ Page({
       url: '../cdOrder/cdOrder',
     })
   },
+  gotoFCManage(){
+    wx.navigateTo({
+      url: '../fcManage/fcManage',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that  = this;
-    var link = 'http://localhost:8080/api/user/index';
+    this.setData({
+      user: wx.getStorageSync('user')
+    })
+    var that = this;
+    var link2 = app.globalData.http +'/api/cleaner/getOrderInfo';
     var Token = wx.getStorageSync('token');
     wx.request({
-      url: link,
+      url: link2,
       header: {
-        'Authorization':Token,
+        'Authorization': Token,
         'content-type': 'application/json' // 默认值
       },
-      success(res){
-        console.log(res.data)
+      success(res) {
         if(res.data.code==200){
-          wx.setStorageSync('user',res.data);
-          //正式开发环境从此开始：
           that.setData({
-            user: wx.getStorageSync('user')
+            score:res.data.data[0].score,
+            times:res.data.data[1].times,
           })
         }
       },
-      fail(){
+      fail() {
         console.log("fail");
       }
     })

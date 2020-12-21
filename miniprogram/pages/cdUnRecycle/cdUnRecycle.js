@@ -44,6 +44,21 @@ Page({
         icon: "none",
         duration: 1000,
       })
+      this.setData({
+        [index]: 0
+      })
+      var t = that.data.garbageChooses;
+      var myScore = 0;
+      for (var i = 0; i < t.length; i++) {
+        if (t[i] != null) {
+          myScore = myScore + ((t[i].amount) * (t[i].garbage.score))
+        }
+      }
+      myScore = myScore.toFixed(1)
+      that.setData({
+        score: myScore
+      })
+      app.globalData.score = myScore;
     }
 
   },
@@ -79,6 +94,21 @@ Page({
         icon: "none",
         duration: 1000,
       })
+      this.setData({
+        [index]: 0
+      })
+      var t = that.data.garbageChooses;
+      var myScore = 0;
+      for (var i = 0; i < t.length; i++) {
+        if (t[i] != null) {
+          myScore = myScore + ((t[i].amount) * (t[i].garbage.score))
+        }
+      }
+      myScore = myScore.toFixed(1)
+      that.setData({
+        score: myScore
+      })
+      app.globalData.score = myScore;
     }
   },
   addAmount(event) {
@@ -105,6 +135,9 @@ Page({
     var that = this;
     var id = event.target.dataset.id;
     var amount = parseFloat(this.data.garbageChooses[id].amount) - 1;
+    if(amount<0){
+      amount=0;
+    }
     var index = "garbageChooses[" + id + "].amount";
     this.setData({
       [index]: amount

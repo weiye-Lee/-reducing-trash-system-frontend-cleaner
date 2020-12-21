@@ -14,7 +14,11 @@
     "pages/cdAddressManage/cdAddressManage",
     "pages/cdUnRecycle/cdUnRecycle",
     "pages/cdOrder/cdOrder",
-    "pages/cdOrderDetail/cdOrderDetail"
+    "pages/cdOrderDetail/cdOrderDetail",
+    "pages/fcManage/fcManage",
+    "pages/addFarmer/addFarmer",
+    "pages/rank/rank",
+    "pages/farmerDetail/farmerDetail"
   ],
   "window": {
     "backgroundColor": "#DCDCDC",

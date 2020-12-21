@@ -9,10 +9,11 @@ Page({
 
   },
   logOut() {
-    app.globalData.token = '';
-    wx.setStorageSync('token', '');
+    app.globalData.token = null;
+    app.globalData.user = null;
+    wx.setStorageSync('token', null);
     wx.setStorageSync('user', null);
-    wx.navigateTo({
+    wx.reLaunch({
       url: '../login2/login2',
     })
   },

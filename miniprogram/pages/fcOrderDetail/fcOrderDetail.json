@@ -1,5 +1,5 @@
 {
   "usingComponents": {  "van-button": "@vant/weapp/button/index",
     "van-icon": "@vant/weapp/icon/index"},
-  "navigationBarTitleText": "订单审核"
+  "navigationBarTitleText": "订单详情"
 }

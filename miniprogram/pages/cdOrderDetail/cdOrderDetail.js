@@ -1,35 +1,90 @@
 // miniprogram/pages/cdOrderDetail/cdOrderDetail.js
+import Dialog from '../../miniprogram_npm/@vant/weapp/dialog/dialog';
+var app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    order:'',
+    order: '',
   },
-
+  deleteOrder() {
+    console.log("hello");
+    var that = this;
+    Dialog.confirm({
+        title: '温馨提示',
+        message: '确定取消订单？',
+      })
+      .then(() => {
+        // on confirm
+        var link = app.globalData.http + '/api/cleaner/removeCDOrders?id=' + that.data.order.id
+        var token = app.getToken();
+        var data = null;
+        wx.showLoading({
+          title: '加载中...',
+          mask: true
+        });
+        wx.request({
+          url: link,
+          header: {
+            'content-type': 'application/json', // 默认值
+            'Authorization': token
+          },
+          method: 'POST',
+          data: data,
+          success(res) {
+            wx.hideLoading();
+            console.log(res.data.data);
+            if (res.data.code == 200) {
+              wx.showToast({
+                title: '已为您取消订单',
+                icon: 'success',
+                duration: 2000,
+              })
+              setTimeout(function () {
+                wx.navigateTo({
+                  url: '../cdOrder/cdOrder',
+                })
+              }, 1500);
+            } else {
+              console.log(失败2);
+            }
+          },
+          fail() {
+            console.log(失败1);
+          }
+        })
+        console.log("hello4");
+      })
+      .catch(() => {
+        // on cancel
+      });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this;
     var id = options.id;
-    var link = 'http://localhost:8080/api/cleaner/getBaseOrderById?id='+id;
+    var link = app.globalData.http +'/api/cleaner/getBaseOrderById?id=' + id;
     var Token = wx.getStorageSync('token');
     wx.request({
       url: link,
       header: {
-        'Authorization':Token,
+        'Authorization': Token,
         'content-type': 'application/json' // 默认值
       },
-      success(res){
+      success(res) {
         console.log(res.data);
-        if(res.data.code==200){
+        if (res.data.code == 200) {
+          var time = res.data.data.insertTime;
+          time = time.replace("T", " ");
+          res.data.data.insertTime = time;
           that.setData({
-          order:res.data.data
-        })
+            order: res.data.data
+          })
         }
-       
+
       }
     })
   },

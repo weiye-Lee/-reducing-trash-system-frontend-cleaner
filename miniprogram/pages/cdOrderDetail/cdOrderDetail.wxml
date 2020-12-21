@@ -11,7 +11,11 @@
 	</view>
   <view class="row">
 		<view class="title">地址：</view>
-		<view class="value">{{order.address}}</view>
+		<view class="value">
+		<view >{{order.province+" "+order.city}}</view>
+		<view >{{order.area+" "+order.street+" "+order.village}}</view>
+			<view >{{order.address}}</view>
+		</view>
 	</view>
 	<view class="row">
 		<view class="title"> 订单编号：</view>
@@ -48,5 +52,7 @@
   预计本单积分：<text class="score-value">{{order.score}}</text>
    </view>
 	</view>
-   <van-button wx:if="{{!order.checkStatus}}" type="danger" custom-style="left:125%">取消订单</van-button>
+   <van-button wx:if="{{!order.checkStatus}}" type="danger" custom-style="left:125%" bindtap="deleteOrder">取消订单</van-button>
 </view>
+
+<van-dialog id="van-dialog" />

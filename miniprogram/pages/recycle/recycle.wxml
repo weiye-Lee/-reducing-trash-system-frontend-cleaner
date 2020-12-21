@@ -94,7 +94,7 @@
 									</button> -->
 								</view>
 								<view class="footer" wx:if="{{item.unit=='个'}}">
-									<input data-id="{{item.id}}" data-name="amount" value="{{garbageChooses[item.id].amount}}" class="num-input" bindinput="onUnitChangeByInt"></input>个
+									<input data-id="{{item.id}}" data-name="amount" value="{{garbageChooses[item.id].amount}}" class="num-input" bindblur="onUnitChangeByInt"></input>个
 									<button data-id="{{item.id}}" bindtap='addAmount' plain="true">
 										<image class="icon" src="../../images/util/add.png"></image>
 									</button>
@@ -140,7 +140,7 @@
 									</button> -->
 								</view>
 								<view class="footer" wx:if="{{item.unit=='个'}}">
-									<input data-id="{{item.id}}" data-name="amount" value="{{garbageChooses[item.id].amount}}" class="num-input" bindinput="onUnitChangeByInt"></input>个
+									<input data-id="{{item.id}}" data-name="amount" value="{{garbageChooses[item.id].amount}}" class="num-input" bindblur="onUnitChangeByInt"></input>个
 									<button data-id="{{item.id}}" bindtap='addAmount' plain="true">
 										<image class="icon" src="../../images/util/add.png"></image>
 									</button>
@@ -186,7 +186,7 @@
 									</button> -->
 								</view>
 								<view class="footer" wx:if="{{item.unit=='个'}}">
-									<input data-id="{{item.id}}" data-name="amount" type="number" value="{{garbageChooses[item.id].amount}}" class="num-input" bindinput="onUnitChangeByInt"></input>个
+									<input data-id="{{item.id}}" data-name="amount" type="number" value="{{garbageChooses[item.id].amount}}" class="num-input" bindblur="onUnitChangeByInt"></input>个
 									<button data-id="{{item.id}}" bindtap='addAmount' plain="true">
 										<image class="icon" src="../../images/util/add.png"></image>
 									</button>
@@ -232,7 +232,7 @@
 									</button> -->
 								</view>
 								<view class="footer" wx:if="{{item.unit=='个'}}">
-									<input data-id="{{item.id}}" data-name="amount" value="{{garbageChooses[item.id].amount}}" class="num-input" bindinput="onUnitChangeByInt"></input>个
+									<input data-id="{{item.id}}" data-name="amount" value="{{garbageChooses[item.id].amount}}" class="num-input" bindblur="onUnitChangeByInt"></input>个
 									<button data-id="{{item.id}}" bindtap='addAmount' plain="true">
 										<image class="icon" src="../../images/util/add.png"></image>
 									</button>

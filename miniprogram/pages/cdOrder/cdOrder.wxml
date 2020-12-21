@@ -4,7 +4,8 @@
 		<view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">已完成</view>
 	</view>
 	<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
-		<swiper-item>
+		<swiper-item class="swiper-items">
+		<scroll-view  scroll-x="false" scroll-y="true" class='scroll-views'>
 			<block wx:for="{{unFinishedList}}" wx:key="index">
 				<view class="item" data-id="{{item.id}}" bindtap="gotoOrderDetail">
 					<view class="first-row">
@@ -16,8 +17,11 @@
 						<van-icon name="location-o" color="rgb(18,150,219)" size="25px" />{{item.address}}</view>
 				</view>
 			</block>
-		</swiper-item>
-		<swiper-item>
+					</scroll-view>
+		</swiper-item >
+		
+		<swiper-item class="swiper-items">
+		<scroll-view  scroll-x="false" scroll-y="true" class='scroll-views'>
 			<block wx:for="{{finishedList}}" wx:key="index">
 				<view class="item" data-id="{{item.id}}" bindtap="gotoOrderDetail">
 					<view class="first-row">
@@ -29,6 +33,7 @@
 						<van-icon name="location-o" color="rgb(18,150,219)" size="25px" />{{item.address}}</view>
 				</view>
 			</block>
+					</scroll-view>
 		</swiper-item>
 	</swiper>
 </view>
